@@ -1,0 +1,30 @@
+.container {
+	background-color: #141316;
+	width: 100vw;
+	font-size: 10px;
+	color: azure;
+}
+
+.heading {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 100%;
+	color: gray;
+	text-transform: uppercase;
+	border-bottom: 1px solid #1c1a1f;
+	border-top: 1px solid #1c1a1f;
+	padding: 0.5em 0.2em;
+}
+.link {
+	text-decoration: none;
+}
+.rank {
+	width: 5%;
+}
+
+@media screen and (max-width: 720px) {
+	.mobileHide {
+		display: none;
+	}
+}

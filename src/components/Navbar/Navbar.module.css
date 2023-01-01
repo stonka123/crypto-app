@@ -1,0 +1,22 @@
+.container {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	background-color: #141316;
+	color: azure;
+	height: 10vh;
+}
+.icon {
+	color: #bbfc30;
+}
+h1 {
+	font-size: 30px;
+	text-transform: uppercase;
+}
+span {
+	text-transform: lowercase;
+}
+.link {
+	text-decoration: none;
+}
