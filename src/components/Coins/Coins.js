@@ -8,10 +8,10 @@ const Coins = props => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.heading}>
-				<p className={styles.rank}>Rank</p>
-				<p>Token</p>
-				<p>Price</p>
-				<p>24h</p>
+				<p className={styles.rank}>#</p>
+				<p className={styles.name}>Token</p>
+				<p className={styles['box-price']}>Price</p>
+				<p className={styles.box}>24h</p>
 				<p className={styles.mobileHide}>Volume</p>
 				<p className={styles.mobileHide}>Market Cap</p>
 			</div>
