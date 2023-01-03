@@ -13,8 +13,13 @@ html {
 	background-image: url('./assets/img/bgc.jpg');
 }
 .dashboard {
+	background-color: #141316;
 	height: 100vh;
 	margin: 0 auto;
 	max-width: 900px;
 	overflow-y: scroll;
+	overflow-x: hidden;
+}
+.link {
+	text-decoration: none;
 }

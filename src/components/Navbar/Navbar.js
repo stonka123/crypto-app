@@ -2,7 +2,7 @@ import React from 'react'
 import styles from './Navbar.module.css'
 import { FaCoins } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import SelectBar from '../SelectBar/SelectBar'
+import { styled, alpha } from '@mui/material/styles';
 
 const Navbar = () => {
 	return (
@@ -14,6 +14,7 @@ const Navbar = () => {
 					</h1>
 					<FaCoins className={styles.icon} />
 				</div>
+			
 			</Link>
 			{/* <SelectBar /> */}
 		</>

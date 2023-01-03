@@ -1,12 +1,12 @@
 import React from 'react'
-import Coin from '../../pages/Coin/Coin'
-import styles from './Coins.module.css'
+import styles from './Favorites.module.css'
+import CoinItem from '../../components/CoinItem/CoinItem'
+import Coin from '../Coin/Coin'
 import { Link } from 'react-router-dom'
-import CoinItem from '../CoinItem/CoinItem'
-import SelectBar from '../SelectBar/SelectBar'
 import CircularProgress from '@mui/material/CircularProgress'
 
-const Coins = props => {
+const Favorites = props => {
+	console.log(props.coins)
 	return (
 		<div className={styles.container}>
 			<div className={styles.heading}>
@@ -27,6 +27,7 @@ const Coins = props => {
 					/>
 				</div>
 			) : null}
+
 			<div className='lol'>
 				<div>
 					{props.coins.map(coin => {
@@ -42,4 +43,4 @@ const Coins = props => {
 	)
 }
 
-export default Coins
+export default Favorites

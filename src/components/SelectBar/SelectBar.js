@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './SelectBar.module.css'
 const SelectBar = () => {
+	const [order, setOrder] = useState('ASC')
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.heading}>

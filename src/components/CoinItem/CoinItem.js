@@ -7,7 +7,9 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight'
 const CoinItem = props => {
 	return (
 		<div className={styles.container}>
-			<div className={styles.heading}>
+			<div
+				className={props.coin.market_cap_rank % 2 === 0 ? `${styles.heading}` : `${styles.headingOdd}`}
+				key={props.coin.market_cap_rank}>
 				<p className={styles.rank}>{props.coin.market_cap_rank}</p>
 				<div className={styles.name}>
 					<img src={props.coin.image} alt='' />
