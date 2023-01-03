@@ -1,6 +1,6 @@
 .container {
-	background-color: #141316;
-	width: 100vw;
+	background-color: transparent;
+	width: 100%;
 	color: rgb(236, 236, 236);
 	font-size: 12px;
 }

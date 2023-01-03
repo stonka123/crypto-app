@@ -4,6 +4,8 @@ import Coins from './components/Coins/Coins'
 import Navbar from './components/Navbar/Navbar'
 import Coin from './pages/Coin/Coin'
 import axios from 'axios'
+import Footer from './components/Footer/Footer'
+import './mui.css'
 
 function App() {
 	const [coins, setCoins] = useState([])
@@ -23,7 +25,7 @@ function App() {
 	}, [])
 
 	return (
-		<div>
+		<div className='dashboard'>
 			<Router>
 				<Navbar />
 				<Routes>
@@ -32,6 +34,7 @@ function App() {
 						<Route path=':coinId' element={<Coin />} />
 					</Route>
 				</Routes>
+				<Footer />
 			</Router>
 		</div>
 	)

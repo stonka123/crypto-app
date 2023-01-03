@@ -8,3 +8,13 @@
 	-moz-osx-font-smoothing: grayscale;
 	font-family: 'Roboto', sans-serif;
 }
+html {
+	font-family: 'Roboto', sans-serif;
+	background-image: url('./assets/img/bgc.jpg');
+}
+.dashboard {
+	height: 100vh;
+	margin: 0 auto;
+	max-width: 900px;
+	overflow-y: scroll;
+}

@@ -1,7 +1,10 @@
 .container {
 	background-color: #141316;
 	width: 100%;
-	max-width: 900px;
+	position: sticky;
+	top: 10vh;
+	left: 0;
+	right: 0;
 	font-size: 10px;
 	color: azure;
 }
@@ -42,10 +45,6 @@ p {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-}
-.lol {
-	width: 100%;
-	color: red;
 }
 
 @media screen and (max-width: 720px) {
