@@ -14,7 +14,7 @@ import Searchbar from './Searchbar/Searchbar'
 const Search = props => {
 	return (
 		<div className={styles.container}>
-			<Searchbar />
+			
 		</div>
 	)
 }

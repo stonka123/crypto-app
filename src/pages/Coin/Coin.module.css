@@ -1,8 +1,142 @@
 .container {
+	width: 100%;
+	padding: 1em;
+	margin-bottom: 56px;
+}
+.coinContainer {
+}
+.contentTop {
+	color: aliceblue;
+	font-size: 10px;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+.buttonAdd {
 	display: flex;
 	align-items: center;
-	justify-content: center;
+	border-radius: 8px;
+	background-color: #222125;
+	padding: 0.5em 1em;
+	border: none;
+	color: rgb(177, 182, 187);
+	cursor: pointer;
+}
+.iconAdd {
+	color: #fc3030;
+}
+
+.contentBody {
+	max-width: 740px;
+	margin: 1em auto;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	background-color: #26272b;
+	box-shadow: 0px 0px 12px #18191b;
+	border-radius: 8px;
+}
+
+.rankBtn {
+	border: 1px solid #00ff2a;
+	box-shadow: 0px 0px 8px #00ff2a;
+	background-color: #00ff2a;
+	border-radius: 8px;
+	padding: 0.2rem;
+	text-transform: capitalize;
+}
+
+.info {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 1em;
+	margin: 0.5em;
+	color: aliceblue;
 	width: 100%;
-	height: 90vh;
-	background-color: #141316;
+}
+.logo {
+	width: 30px;
+	height: 30px;
+}
+.homepage {
+	color: rgb(201, 201, 201);
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.coinHeading {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+}
+.symbol {
+	text-align: center;
+	text-transform: uppercase;
+}
+.coinPrice {
+	font-size: 12px;
+}
+.table {
+	width: 100%;
+}
+tbody {
+	text-align: center;
+}
+table {
+	margin-top: 1em;
+
+	text-align: center;
+}
+
+td,
+th {
+	text-align: center;
+	font-size: 12px;
+	padding: 0.2em;
+}
+
+th {
+	background-color: #333;
+	color: #a1a1a1;
+}
+td p {
+	width: 100%;
+}
+.green {
+	color: green;
+}
+.red {
+	color: red;
+}
+.contentInfo {
+	max-width: 740px;
+	margin: 1em auto;
+	padding: 1em;
+	display: flex;
+	flex-direction: column;
+	color: rgb(201, 201, 201);
+	background-color: #26272b;
+	box-shadow: 0px 0px 12px #18191b;
+	border-radius: 8px;
+	font-size: 12px;
+}
+
+.stats {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	border-bottom: 1px solid #33343a;
+	padding: 0.5em 0.3em;
+	margin: 0.5em;
+}
+.property {
+}
+.value p {
+	width: 100%;
+}
+
+@media screen and (max-width: 700px) {
 }

@@ -1,6 +1,7 @@
 .lol {
 	background-color: #141316;
 	position: fixed;
+	height: 56px;
 	width: 100%;
 	max-width: 900px;
 	bottom: 0;

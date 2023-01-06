@@ -1,11 +1,12 @@
 .container {
 	background-color: #141316;
 	width: 100vw;
-	min-height: 90vh;
+	min-height: 85vh;
 	max-width: 900px;
 	font-size: 10px;
 	color: azure;
 	overflow: hidden;
+	margin-bottom: 56px;
 }
 
 .heading {

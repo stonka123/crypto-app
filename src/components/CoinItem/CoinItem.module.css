@@ -3,7 +3,10 @@
 	width: 100%;
 	color: rgb(236, 236, 236);
 	font-size: 12px;
-	
+	display: flex;
+	width: 100%;
+	align-items: center;
+	justify-content: center;
 }
 
 .heading,
@@ -27,12 +30,10 @@
 .arrow-up {
 	color: rgb(13, 196, 13);
 	font-size: 16px;
-	margin-right: 0.2em;
 }
 .arrow-down {
 	color: rgb(196, 27, 27);
 	font-size: 16px;
-	margin-right: 0.2em;
 }
 .red {
 	color: rgb(196, 27, 27);
@@ -46,7 +47,6 @@
 .arrow-right {
 	color: gray;
 	font-size: 16px;
-	margin-right: 0.2em;
 }
 .link {
 	text-decoration: none;
@@ -79,6 +79,10 @@ p,
 	width: 5%;
 	font-size: 10px;
 	color: gray;
+}
+.addIcon {
+	font-size: 10px;
+	fill: #bbfc30;
 }
 img {
 	width: 15px;

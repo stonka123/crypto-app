@@ -15,7 +15,6 @@ const CoinItem = props => {
 					<img src={props.coin.image} alt='' />
 					<p className={styles['coin-name']}>{props.coin.symbol}</p>
 				</div>
-				<p className={styles['box-price']}>{props.coin.current_price.toFixed(2)} USD</p>
 				{props.coin.price_change_percentage_24h.toFixed(1) == 0 && (
 					<p className={`${styles.gray} box`}>
 						<ArrowRightIcon className={styles['arrow-right']} /> {props.coin.price_change_percentage_24h.toFixed(1)}%
@@ -26,14 +25,15 @@ const CoinItem = props => {
 						<ArrowDropUpIcon className={styles['arrow-up']} /> {props.coin.price_change_percentage_24h.toFixed(1)}%
 					</p>
 				)}
+
 				{props.coin.price_change_percentage_24h.toFixed(1) < -0.01 && (
 					<p className={`${styles.red} box`}>
 						<ArrowDropDownIcon className={styles['arrow-down']} /> {props.coin.price_change_percentage_24h.toFixed(1)} %
 					</p>
 				)}
-
-				<p className={styles.mobileHide}>{props.coin.total_volume} $</p>
-				<p className={styles.mobileHide}>{props.coin.market_cap} $</p>
+				<p className={styles['box-price']}>{props.coin.current_price.toFixed(2)} USD</p>
+				<p className={styles.mobileHide}>{props.coin.total_volume.toLocaleString()} $</p>
+				<p className={styles.mobileHide}>{props.coin.market_cap.toLocaleString()} $</p>
 			</div>
 		</div>
 	)

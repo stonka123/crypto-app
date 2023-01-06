@@ -18,8 +18,11 @@ html {
 	margin: 0 auto;
 	max-width: 900px;
 	overflow-y: scroll;
-	overflow-x: hidden;
+	/* overflow-x: hidden; */
 }
 .link {
 	text-decoration: none;
+}
+.css-1q36rmd-MuiStack-root {
+	margin-left: 2em;
 }
