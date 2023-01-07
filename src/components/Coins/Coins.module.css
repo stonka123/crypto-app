@@ -1,12 +1,12 @@
 .container {
 	background-color: #141316;
-	width: 100vw;
 	min-height: 85vh;
 	max-width: 900px;
 	font-size: 10px;
 	color: azure;
-	overflow: hidden;
-	margin-bottom: 56px;
+	margin: 0 auto;
+	/* margin-bottom: 56px; */
+	margin-top: 20vh;
 }
 
 .heading {
@@ -23,10 +23,14 @@
 	text-decoration: none;
 }
 .test {
-	position: absolute;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	height: 70vh;
+	/* position: absolute;
 	top: 50%;
 	right: 50%;
-	transform: translate(50%, 50%);
+	transform: translate(50%, 50%); */
 }
 
 .rank {
@@ -52,11 +56,7 @@ p {
 	align-items: center;
 	justify-content: center;
 }
-.lol {
-	background-color: red;
-	width: 100%;
-	height: 100%;
-}
+
 @media screen and (max-width: 720px) {
 	.mobileHide {
 		display: none;

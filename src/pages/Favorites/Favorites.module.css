@@ -6,6 +6,8 @@
 	font-size: 10px;
 	color: azure;
 	overflow: hidden;
+	margin-bottom: 56px;
+	/* margin-top: 20vh; */
 }
 
 .heading {

@@ -43,7 +43,7 @@ const Coin = props => {
 						</div>
 						<div className={styles.coinPrice}>
 							{coin.market_data?.current_price ? (
-								<h1>{coin.market_data.current_price.usd.toLocaleString()} USD</h1>
+								<h3>{coin.market_data.current_price.usd.toLocaleString()} USD</h3>
 							) : null}
 						</div>
 					</div>
@@ -143,14 +143,14 @@ const Coin = props => {
 				<div className={styles.stats}>
 					<h4 className={styles.property}>24 Hour Low</h4>
 					<div className={styles.value}>
-						{coin.market_data?.low_24h ? <p>$ {coin.market_data.low_24h.usd.toLocaleString()}</p> : null}
+						{coin.market_data?.low_24h ? <p>$ {coin.market_data.low_24h.usd.toFixed(2)}</p> : null}
 					</div>
 				</div>
 				<div className={styles.stats}>
 					<h4 className={styles.property}>24 Hour High</h4>
 
 					<div className={styles.value}>
-						{coin.market_data?.high_24h ? <p>$ {coin.market_data.high_24h.usd.toLocaleString()}</p> : null}
+						{coin.market_data?.high_24h ? <p>$ {coin.market_data.high_24h.usd.toFixed(2)}</p> : null}
 					</div>
 				</div>
 				<div className={styles.stats}>
@@ -161,7 +161,7 @@ const Coin = props => {
 					</div>
 				</div>
 				<div className={styles.stats}>
-					<h4 className={styles.property}>Circulating Supply</h4>
+					<h4 className={styles.property}>Total Supply</h4>
 					<div className={styles.value}>
 						{coin.market_data ? <p>$ {coin.market_data.circulating_supply.toLocaleString()}</p> : null}
 					</div>

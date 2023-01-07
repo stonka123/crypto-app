@@ -1,16 +1,20 @@
 .container {
 	width: 100%;
 	padding: 1em;
-	margin-bottom: 56px;
+	margin-top: 20vh;
+	height: 100%;
+	/* margin-bottom: 10vh; */
+	overflow: scroll;
 }
-.coinContainer {
-}
+
 .contentTop {
 	color: aliceblue;
 	font-size: 10px;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	max-width: 740px;
+	margin: 0 auto;
 }
 .buttonAdd {
 	display: flex;
@@ -21,39 +25,50 @@
 	border: none;
 	color: rgb(177, 182, 187);
 	cursor: pointer;
+	transition: background-color 0.2s;
 }
-.iconAdd {
+.buttonAdd:hover {
+	background-color: #33343a;
+}
+
+.buttonAdd:hover .iconAdd {
 	color: #fc3030;
+	transition: color 0.2s;
 }
 
 .contentBody {
 	max-width: 740px;
 	margin: 1em auto;
-	padding: 1rem;
+	padding: 0.5rem;
 	display: flex;
 	flex-direction: column;
 	background-color: #26272b;
 	box-shadow: 0px 0px 12px #18191b;
 	border-radius: 8px;
 }
-
+.rank {
+	display: flex;
+	justify-content: flex-start;
+	margin-left: 0.5rem;
+}
 .rankBtn {
 	border: 1px solid #00ff2a;
 	box-shadow: 0px 0px 8px #00ff2a;
 	background-color: #00ff2a;
 	border-radius: 8px;
-	padding: 0.2rem;
+	padding: 0.2rem 0.3rem;
+	margin-left: 0.4em;
 	text-transform: capitalize;
+	color: rgb(26, 80, 26);
 }
 
 .info {
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 1em;
+	padding: 0.5em;
 	margin: 0.5em;
 	color: aliceblue;
-	width: 100%;
 }
 .logo {
 	width: 30px;
@@ -76,8 +91,8 @@
 	text-align: center;
 	text-transform: uppercase;
 }
-.coinPrice {
-	font-size: 12px;
+.coinPrice h3 {
+	font-size: 18px;
 }
 .table {
 	width: 100%;
@@ -132,8 +147,7 @@ td p {
 	padding: 0.5em 0.3em;
 	margin: 0.5em;
 }
-.property {
-}
+
 .value p {
 	width: 100%;
 }

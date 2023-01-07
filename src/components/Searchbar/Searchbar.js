@@ -18,6 +18,7 @@ const Searchbar = props => {
 		borderRadius: theme.shape.borderRadius,
 		backgroundColor: alpha(theme.palette.common.white, 0.15),
 		color: 'gray',
+
 		'&:hover': {
 			backgroundColor: alpha(theme.palette.common.white, 0.25),
 		},
@@ -27,6 +28,7 @@ const Searchbar = props => {
 		[theme.breakpoints.up('sm')]: {
 			marginLeft: theme.spacing(1),
 			width: 'auto',
+			margin: '0 auto',
 		},
 	}))
 
@@ -55,8 +57,7 @@ const Searchbar = props => {
 			[theme.breakpoints.up('sm')]: {
 				width: '12ch',
 				'&:focus': {
-					width: '20ch',
-					color: 'red',
+					width: '12ch',
 				},
 			},
 		},
@@ -74,9 +75,9 @@ const Searchbar = props => {
 	return (
 		<Search
 			sx={{
-				width: { sm: 200, md: 300 },
+				width: { sm: '60%', md: '60%' },
 				'& .MuiInputBase-root': {
-					// height: 30,
+					height: 35,
 				},
 			}}>
 			<SearchIconWrapper>

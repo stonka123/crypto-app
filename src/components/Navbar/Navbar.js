@@ -6,6 +6,7 @@ import { styled, alpha } from '@mui/material/styles'
 import Searchbar from '../Searchbar/Searchbar'
 import { style } from '@mui/system'
 import NotificationsTwoToneIcon from '@mui/icons-material/NotificationsTwoTone'
+import Logo from '../../assets/img/logo.png'
 
 import FormGroup from '@mui/material/FormGroup'
 import FormControlLabel from '@mui/material/FormControlLabel'
@@ -58,10 +59,10 @@ const Navbar = props => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.logoBox}>
-				<h1 className={styles.logo}>
-					Coin<span>check</span>
-					<FaCoins className={styles.icon} />
-				</h1>
+				<div className={styles.logo}>
+					<h1>CryptoChecker</h1>
+					<img src={Logo} className={styles.img} />
+				</div>
 				<NotificationsTwoToneIcon className={styles.iconNoti} />
 			</div>
 			<Link to='/' className={styles.link}>
