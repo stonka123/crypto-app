@@ -34,7 +34,7 @@ const Footer = () => {
 		}
 	`
 	const [value, setValue] = React.useState(0)
-	console.log(value)
+
 	return (
 		<div className={styles.container}>
 			<Box className={styles.lol}>

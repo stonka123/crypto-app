@@ -5,7 +5,7 @@
 	font-size: 10px;
 	color: azure;
 	margin: 0 auto;
-	/* margin-bottom: 56px; */
+
 	margin-top: 20vh;
 }
 
@@ -27,10 +27,7 @@
 	align-items: center;
 	justify-content: center;
 	height: 70vh;
-	/* position: absolute;
-	top: 50%;
-	right: 50%;
-	transform: translate(50%, 50%); */
+	
 }
 
 .rank {

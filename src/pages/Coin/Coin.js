@@ -6,7 +6,8 @@ import DOMPurify from 'dompurify'
 import FavoriteIcon from '@mui/icons-material/Favorite'
 import { style } from '@mui/system'
 import moment from 'moment'
-const Coin = props => {
+
+const Coin = (props, konFav) => {
 	const [coin, setCoin] = useState([])
 	const params = useParams()
 	const URL_COIN = `https://api.coingecko.com/api/v3/coins/${params.coinId}`
@@ -27,7 +28,11 @@ const Coin = props => {
 			<div className={styles.coinContainer}>
 				<div className={styles.contentTop}>
 					<h1>{coin.name}</h1>
-					<button className={styles.buttonAdd}>
+					<button
+						className={styles.buttonAdd}
+						onClick={() => {
+							props.konkFav(coin)
+						}}>
 						<p></p> <FavoriteIcon className={styles.iconAdd} />
 					</button>
 				</div>

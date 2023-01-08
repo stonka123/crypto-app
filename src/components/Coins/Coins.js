@@ -7,7 +7,6 @@ import CoinItem from '../CoinItem/CoinItem'
 import CircularProgress from '@mui/material/CircularProgress'
 
 const Coins = props => {
-	console.log('coiny', props.term.value)
 	return (
 		<div className={styles.container}>
 			<div className={styles.heading}>
@@ -43,7 +42,11 @@ const Coins = props => {
 					})
 					.map(coin => {
 						return (
-							<Link className={styles.link} to={`/coin/${coin.id}`} element={<Coin />} key={coin.id}>
+							<Link
+								className={styles.link}
+								to={`/coin/${coin.id}`}
+								element={<Coin konFav={props.konkFav} />}
+								key={coin.id}>
 								<CoinItem coin={coin} />
 							</Link>
 						)

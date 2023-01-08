@@ -13,6 +13,8 @@ function App() {
 	const [coins, setCoins] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [searchTerm, setSearchTerm] = useState('')
+	const [coinsFavs, setCoinsFav] = useState('')
+	const [fav, setFav] = useState([])
 
 	const url =
 		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
@@ -34,7 +36,11 @@ function App() {
 	function searchHandler(term) {
 		setSearchTerm(term)
 	}
-
+	function addToFav(coin) {
+		if (!fav.includes(coin)) {
+			setFav(prevFav => [...prevFav, coin])
+		}
+	}
 	return (
 		<div className='test'>
 			<div className='dashboard'>
@@ -45,7 +51,7 @@ function App() {
 						}}
 					/>
 					<Routes>
-						<Route path='/coin' element={<Coin />}>
+						<Route path='/coin' element={<Coin konkFav={coin => addToFav(coin)} />}>
 							<Route path=':coinId' element={<Coin />} />
 						</Route>
 						<Route path='/' element={<Coins term={searchTerm} coins={coins} loading={loading} />} />
@@ -53,7 +59,10 @@ function App() {
 							path='/search'
 							element={<Search coins={coins} loading={loading} onSearch={term => searchHandler(term)} />}
 						/>
-						<Route path='/favorites' element={<Favorites coins={coins} loading={loading} />} />
+						<Route
+							path='/favorites'
+							element={<Favorites coins={coins} loading={loading} favCoins={coinsFavs} favC={fav} />}
+						/>
 					</Routes>
 					<Footer />
 				</Router>
