@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import styles from './Navbar.module.css'
-import { FaCoins } from 'react-icons/fa'
 import { Link } from 'react-router-dom'
-import { styled, alpha } from '@mui/material/styles'
+import { styled } from '@mui/material/styles'
 import Searchbar from '../Searchbar/Searchbar'
-import { style } from '@mui/system'
+
 import NotificationsTwoToneIcon from '@mui/icons-material/NotificationsTwoTone'
 import Logo from '../../assets/img/logo.png'
 
-import FormGroup from '@mui/material/FormGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
-import Switch, { SwitchProps } from '@mui/material/Switch'
-import Stack from '@mui/material/Stack'
-import Typography from '@mui/material/Typography'
+import Switch from '@mui/material/Switch'
 
 const Navbar = props => {
 	const AntSwitch = styled(Switch)(({ theme }) => ({

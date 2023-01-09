@@ -13,7 +13,7 @@ function App() {
 	const [coins, setCoins] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [searchTerm, setSearchTerm] = useState('')
-	const [coinsFavs, setCoinsFav] = useState('')
+
 	const [fav, setFav] = useState([])
 
 	const url =
@@ -61,7 +61,7 @@ function App() {
 						/>
 						<Route
 							path='/favorites'
-							element={<Favorites coins={coins} loading={loading} favCoins={coinsFavs} favC={fav} />}
+							element={<Favorites coins={coins} loading={loading} favC={fav} />}
 						/>
 					</Routes>
 					<Footer />

@@ -3,13 +3,24 @@ import styles from './FavCoins.module.css'
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
 import ArrowRightIcon from '@mui/icons-material/ArrowRight'
+import RemoveIcon from '@mui/icons-material/Remove'
+
 const FavCoins = props => {
+	const handleDelete = e => {
+		e.preventDefault()
+
+		console.log(props.fav)
+	}
 	return (
 		<div>
 			<div className={styles.container}>
 				<div
 					className={props.fav?.market_data?.market_cap_rank % 2 === 0 ? `${styles.heading}` : `${styles.headingOdd}`}
 					key={props.fav?.market_data?.market_cap_rank}>
+					<button type='button' className={styles.deleteBtn} onClick={handleDelete}>
+						<RemoveIcon className={styles.removeIcon} />
+					</button>
+
 					<p className={styles.rank}>{props.fav?.market_data?.market_cap_rank}</p>
 					<div className={styles.name}>
 						<img src={props.fav?.image?.large} alt='' />
@@ -34,6 +45,7 @@ const FavCoins = props => {
 							{props.fav?.market_data?.price_change_percentage_24h.toFixed(1)}%
 						</p>
 					)}
+
 					<p className={styles['box-price']}>{props.fav?.market_data?.current_price.usd.toFixed(2)} USD</p>
 					<p className={styles.mobileHide}>{props.fav?.market_data?.total_volume.usd.toLocaleString()} $</p>
 					<p className={styles.mobileHide}>{props.fav?.market_data?.market_cap.usd.toLocaleString()} $</p>

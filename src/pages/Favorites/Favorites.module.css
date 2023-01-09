@@ -42,6 +42,9 @@
 	width: 5%;
 	font-size: 10px;
 }
+.delete {
+	width: 10%;
+}
 .name {
 	display: flex;
 	flex-direction: column;
