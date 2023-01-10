@@ -6,12 +6,11 @@ import FavCoins from '../../components/FavCoins/FavCoins'
 import { Link } from 'react-router-dom'
 import CircularProgress from '@mui/material/CircularProgress'
 
-
 const Favorites = props => {
 	return (
 		<div className={styles.container}>
 			<div className={styles.heading}>
-				<p className={styles.delete}>Delete</p>
+				<p className={styles.delete}> Del </p>
 				<p className={styles.rank}>#</p>
 				<p className={styles.name}>Token</p>
 				<p className={styles.box}>24h</p>

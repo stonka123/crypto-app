@@ -1,12 +1,12 @@
 .container {
 	background-color: #141316;
-	min-height: 85vh;
+	/* min-height: 85vh; */
 	max-width: 900px;
 	font-size: 10px;
 	color: azure;
 	margin: 0 auto;
-
-	margin-top: 20vh;
+	overflow-y: scroll;
+	height: calc(100vh - 200px);
 }
 
 .heading {
@@ -16,8 +16,7 @@
 	width: 100%;
 	color: rgb(131, 141, 110);
 	text-transform: uppercase;
-
-	padding: 0.5em 0.2em;
+	padding: 0.5em 0.5em;
 }
 .link {
 	text-decoration: none;
@@ -27,7 +26,6 @@
 	align-items: center;
 	justify-content: center;
 	height: 70vh;
-	
 }
 
 .rank {

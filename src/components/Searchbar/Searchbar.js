@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react'
 
 import { styled, alpha } from '@mui/material/styles'
@@ -7,14 +6,13 @@ import InputBase from '@mui/material/InputBase'
 
 import SearchIcon from '@mui/icons-material/Search'
 
-
 const Searchbar = props => {
 	const Search = styled('div')(({ theme }) => ({
 		position: 'relative',
 		borderRadius: theme.shape.borderRadius,
 		backgroundColor: alpha(theme.palette.common.white, 0.15),
 		color: 'gray',
-
+		width: '100%',
 		'&:hover': {
 			backgroundColor: alpha(theme.palette.common.white, 0.25),
 		},
@@ -29,7 +27,7 @@ const Searchbar = props => {
 	}))
 
 	const SearchIconWrapper = styled('div')(({ theme }) => ({
-		padding: theme.spacing(0, 2),
+		padding: theme.spacing(0, 1),
 		height: '100%',
 		position: 'absolute',
 		pointerEvents: 'none',
@@ -49,11 +47,15 @@ const Searchbar = props => {
 			width: '100%',
 			'&:focus': {
 				color: 'white',
+				width: '100%',
+				border: '1px solid rgba(187, 252, 48,0.5)',
+				boxShadow: '0px 0px 0px 3px rgba(187, 252, 48, 0.1)',
+				borderRadius: '4px',
 			},
 			[theme.breakpoints.up('sm')]: {
 				width: '12ch',
 				'&:focus': {
-					width: '12ch',
+					width: '100%',
 				},
 			},
 		},
@@ -74,6 +76,7 @@ const Searchbar = props => {
 				width: { sm: '60%', md: '60%' },
 				'& .MuiInputBase-root': {
 					height: 35,
+					width: '100%',
 				},
 			}}>
 			<SearchIconWrapper>

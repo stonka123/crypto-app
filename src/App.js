@@ -8,7 +8,7 @@ import Footer from './components/Footer/Footer'
 import './mui.css'
 import Search from './pages/Search/Search'
 import Favorites from './pages/Favorites/Favorites'
-
+import ErrorPage from './pages/ErrorPage/ErrorPage'
 function App() {
 	const [coins, setCoins] = useState([])
 	const [loading, setLoading] = useState(true)
@@ -59,10 +59,8 @@ function App() {
 							path='/search'
 							element={<Search coins={coins} loading={loading} onSearch={term => searchHandler(term)} />}
 						/>
-						<Route
-							path='/favorites'
-							element={<Favorites coins={coins} loading={loading} favC={fav} />}
-						/>
+						<Route path='/favorites' element={<Favorites coins={coins} loading={loading} favC={fav} />} />
+						<Route path='/*' element={<ErrorPage />} />
 					</Routes>
 					<Footer />
 				</Router>

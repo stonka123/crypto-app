@@ -1,13 +1,12 @@
 .container {
 	background-color: #141316;
-	width: 100vw;
-	min-height: 85vh;
+	/* min-height: 85vh; */
 	max-width: 900px;
 	font-size: 10px;
 	color: azure;
-	overflow: hidden;
-
-	margin-top: 20vh;
+	margin: 0 auto;
+	overflow-y: scroll;
+	height: calc(100vh - 200px);
 }
 
 .heading {
@@ -18,7 +17,7 @@
 	color: rgb(131, 141, 110);
 	text-transform: uppercase;
 
-	padding: 0.5em 0.2em;
+	padding: 0.5em 0.5em;
 }
 .link {
 	text-decoration: none;
@@ -44,6 +43,7 @@
 }
 .delete {
 	width: 10%;
+	max-width: 30px;
 }
 .name {
 	display: flex;
@@ -61,11 +61,7 @@ p {
 	align-items: center;
 	justify-content: center;
 }
-.lol {
-	background-color: red;
-	width: 100%;
-	height: 100%;
-}
+
 @media screen and (max-width: 720px) {
 	.mobileHide {
 		display: none;
