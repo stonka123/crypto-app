@@ -20,17 +20,15 @@ function App() {
 		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
 
 	useEffect(() => {
-		setTimeout(() => {
-			axios
-				.get(url)
-				.then(res => {
-					setCoins(res.data)
-					setLoading(false)
-				})
-				.catch(err => {
-					console.log(err)
-				})
-		}, 500)
+		axios
+			.get(url)
+			.then(res => {
+				setCoins(res.data)
+				setLoading(false)
+			})
+			.catch(err => {
+				console.log(err)
+			})
 	}, [])
 
 	function searchHandler(term) {
@@ -55,6 +53,7 @@ function App() {
 							<Route path=':coinId' element={<Coin />} />
 						</Route>
 						<Route path='/' element={<Coins term={searchTerm} coins={coins} loading={loading} />} />
+						<Route path='/crypto-app' element={<Coins term={searchTerm} coins={coins} loading={loading} />} />
 						<Route
 							path='/search'
 							element={<Search coins={coins} loading={loading} onSearch={term => searchHandler(term)} />}

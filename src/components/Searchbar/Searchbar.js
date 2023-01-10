@@ -48,9 +48,9 @@ const Searchbar = props => {
 			'&:focus': {
 				color: 'white',
 				width: '100%',
-				border: '1px solid rgba(187, 252, 48,0.5)',
-				boxShadow: '0px 0px 0px 3px rgba(187, 252, 48, 0.1)',
-				borderRadius: '4px',
+				// border: '1px solid rgba(187, 252, 48,0.5)',
+				// boxShadow: '0px 0px 0px 3px rgba(187, 252, 48, 0.1)',
+				// borderRadius: '4px',
 			},
 			[theme.breakpoints.up('sm')]: {
 				width: '12ch',
