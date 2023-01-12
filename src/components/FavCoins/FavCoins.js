@@ -6,18 +6,20 @@ import ArrowRightIcon from '@mui/icons-material/ArrowRight'
 import RemoveIcon from '@mui/icons-material/Remove'
 
 const FavCoins = props => {
-	const handleDelete = e => {
-		e.preventDefault()
-
-		console.log(props.fav)
-	}
 	return (
 		<div>
 			<div className={styles.container}>
 				<div
 					className={props.fav?.market_data?.market_cap_rank % 2 === 0 ? `${styles.heading}` : `${styles.headingOdd}`}
 					key={props.fav?.market_data?.market_cap_rank}>
-					<button type='button' className={styles.deleteBtn} onClick={handleDelete}>
+					<button
+						type='button'
+						className={styles.deleteBtn}
+						onClick={e => {
+							e.preventDefault()
+							console.log(props.fav.id)
+							props.onDelete(props.fav.id)
+						}}>
 						<RemoveIcon className={styles.removeIcon} />
 					</button>
 

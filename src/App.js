@@ -9,6 +9,7 @@ import './mui.css'
 import Search from './pages/Search/Search'
 import Favorites from './pages/Favorites/Favorites'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
+
 function App() {
 	const [coins, setCoins] = useState([])
 	const [loading, setLoading] = useState(true)
@@ -39,6 +40,13 @@ function App() {
 			setFav(prevFav => [...prevFav, coin])
 		}
 	}
+	const removeFavCoin = value => {
+		console.log('klik', fav)
+		setFav(oldValues => {
+			return oldValues.filter(fav => fav.id !== value)
+		})
+	}
+
 	return (
 		<div className='test'>
 			<div className='dashboard'>
@@ -58,7 +66,10 @@ function App() {
 							path='/search'
 							element={<Search coins={coins} loading={loading} onSearch={term => searchHandler(term)} />}
 						/>
-						<Route path='/favorites' element={<Favorites coins={coins} loading={loading} favC={fav} />} />
+						<Route
+							path='/favorites'
+							element={<Favorites coins={coins} loading={loading} favC={fav} onDelete={removeFavCoin} />}
+						/>
 						<Route path='/*' element={<ErrorPage />} />
 					</Routes>
 					<Footer />
