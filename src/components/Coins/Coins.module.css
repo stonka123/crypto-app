@@ -18,6 +18,9 @@
 	text-transform: uppercase;
 	padding: 0.5em 0.5em;
 }
+.heading p {
+	cursor: pointer;
+}
 .link {
 	text-decoration: none;
 }

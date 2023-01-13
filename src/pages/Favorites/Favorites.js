@@ -34,7 +34,7 @@ const Favorites = props => {
 					{props.favC.map((fav, index) => {
 						return (
 							<Link className={styles.link} to={`/coin/${fav.id}`} element={<Coin />} key={index}>
-								<FavCoins fav={fav} onDelete={props.onDelete} favCo={props.favCo} />
+								<FavCoins fav={fav} onDelete={props.onDelete}  />
 							</Link>
 						)
 					})}

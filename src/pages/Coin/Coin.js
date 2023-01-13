@@ -134,7 +134,10 @@ const Coin = (props, konFav) => {
 														? `${styles.green}`
 														: `${styles.red}`
 												}>
-												{coin.market_data.price_change_percentage_1y_in_currency.usd.toFixed(1)}%
+												{coin.market_data.price_change_percentage_1y_in_currency.usd
+													? coin.market_data.price_change_percentage_1y_in_currency.usd.toFixed(1)
+													: 0 }
+												%
 											</p>
 										) : null}
 									</td>

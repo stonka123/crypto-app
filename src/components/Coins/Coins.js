@@ -7,12 +7,23 @@ import CoinItem from '../CoinItem/CoinItem'
 import CircularProgress from '@mui/material/CircularProgress'
 
 const Coins = props => {
+	const sort24h = () => {
+		props.sortHandler24h()
+	}
+	const sortTokenName = () => {
+		props.sortHandlerToken()
+	}
+
 	return (
 		<div className={styles.container}>
 			<div className={styles.heading}>
 				<p className={styles.rank}>#</p>
-				<p className={styles.name}>Token</p>
-				<p className={styles.box}>24h</p>
+				<p className={styles.name} onClick={sortTokenName}>
+					Token
+				</p>
+				<p className={styles.box} onClick={sort24h}>
+					24h
+				</p>
 				<p className={styles['box-price']}>Price</p>
 				<p className={styles.mobileHide}>Volume</p>
 				<p className={styles.mobileHide}>Market Cap</p>
@@ -40,6 +51,7 @@ const Coins = props => {
 							return val
 						}
 					})
+
 					.map(coin => {
 						return (
 							<Link

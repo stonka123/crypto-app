@@ -16,7 +16,7 @@ function App() {
 	const [searchTerm, setSearchTerm] = useState('')
 
 	const [fav, setFav] = useState([])
-
+	const [order, setOrder] = useState('ASC')
 	const url =
 		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
 
@@ -28,7 +28,7 @@ function App() {
 				setLoading(false)
 			})
 			.catch(err => {
-				console.log(err)
+				console.log(err.message)
 			})
 	}, [])
 
@@ -37,7 +37,9 @@ function App() {
 	}
 	function addToFav(coin) {
 		if (!fav.includes(coin)) {
-			setFav(prevFav => [...prevFav, coin])
+			setFav(prevFav => {
+				return [...prevFav, coin]
+			})
 		}
 	}
 	const removeFavCoin = value => {
@@ -45,6 +47,32 @@ function App() {
 		setFav(oldValues => {
 			return oldValues.filter(fav => fav.id !== value)
 		})
+	}
+	const sortHandler24h = () => {
+		const sorted = [...coins].sort((a, b) => b['price_change_percentage_24h'] > a['price_change_percentage_24h'])
+		if (order === 'ASC') {
+			setCoins(sorted)
+			setOrder('DSC')
+		} else if (order === 'DSC') {
+			setCoins(sorted.reverse())
+			setOrder('ASC')
+		}
+
+		// return setCoins(sorted)
+	}
+
+	const sortHandlerToken = () => {
+		const sorted = [...coins].sort((a, b) => (b.symbol < a.symbol ? 1 : -1))
+		if (order === 'ASC') {
+			setCoins(sorted)
+			setOrder('DSC')
+		} else if (order === 'DSC') {
+			setCoins(sorted.reverse())
+			setOrder('ASC')
+		}
+
+		// const sorted = [...coins].sort((a, b) => (b.symbol < a.symbol ? 1 : -1))
+		// return setCoins(sorted)
 	}
 
 	return (
@@ -60,8 +88,30 @@ function App() {
 						<Route path='/coin' element={<Coin konkFav={coin => addToFav(coin)} />}>
 							<Route path=':coinId' element={<Coin />} />
 						</Route>
-						<Route path='/' element={<Coins term={searchTerm} coins={coins} loading={loading} />} />
-						<Route path='/crypto-app' element={<Coins term={searchTerm} coins={coins} loading={loading} />} />
+						<Route
+							path='/'
+							element={
+								<Coins
+									term={searchTerm}
+									coins={coins}
+									loading={loading}
+									sortHandler24h={() => sortHandler24h()}
+									sortHandlerToken={() => sortHandlerToken()}
+								/>
+							}
+						/>
+						<Route
+							path='/crypto-app'
+							element={
+								<Coins
+									term={searchTerm}
+									coins={coins}
+									loading={loading}
+									sortHandler24h={() => sortHandler24h()}
+									sortHandlerToken={() => sortHandlerToken()}
+								/>
+							}
+						/>
 						<Route
 							path='/search'
 							element={<Search coins={coins} loading={loading} onSearch={term => searchHandler(term)} />}
