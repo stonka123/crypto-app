@@ -13,11 +13,16 @@ const Coins = props => {
 	const sortTokenName = () => {
 		props.sortHandlerToken()
 	}
+	const sortRank = () => {
+		props.sortHandlerRank()
+	}
 
 	return (
 		<div className={styles.container}>
 			<div className={styles.heading}>
-				<p className={styles.rank}>#</p>
+				<p className={styles.rank} onClick={sortRank}>
+					#
+				</p>
 				<p className={styles.name} onClick={sortTokenName}>
 					Token
 				</p>

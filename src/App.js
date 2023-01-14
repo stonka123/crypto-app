@@ -14,9 +14,9 @@ function App() {
 	const [coins, setCoins] = useState([])
 	const [loading, setLoading] = useState(true)
 	const [searchTerm, setSearchTerm] = useState('')
-
 	const [fav, setFav] = useState([])
 	const [order, setOrder] = useState('ASC')
+	
 	const url =
 		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
 
@@ -49,7 +49,9 @@ function App() {
 		})
 	}
 	const sortHandler24h = () => {
-		const sorted = [...coins].sort((a, b) => b['price_change_percentage_24h'] > a['price_change_percentage_24h'])
+		const sorted = [...coins].sort((a, b) =>
+			b['price_change_percentage_24h'] > a['price_change_percentage_24h'] ? 1 : -1
+		)
 		if (order === 'ASC') {
 			setCoins(sorted)
 			setOrder('DSC')
@@ -63,6 +65,19 @@ function App() {
 
 	const sortHandlerToken = () => {
 		const sorted = [...coins].sort((a, b) => (b.symbol < a.symbol ? 1 : -1))
+		if (order === 'ASC') {
+			setCoins(sorted)
+			setOrder('DSC')
+		} else if (order === 'DSC') {
+			setCoins(sorted.reverse())
+			setOrder('ASC')
+		}
+
+		// const sorted = [...coins].sort((a, b) => (b.symbol < a.symbol ? 1 : -1))
+		// return setCoins(sorted)
+	}
+	const sortHandlerRank = () => {
+		const sorted = [...coins].sort((a, b) => (b.market_cap_rank < a.market_cap_rank ? 1 : -1))
 		if (order === 'ASC') {
 			setCoins(sorted)
 			setOrder('DSC')
@@ -97,6 +112,7 @@ function App() {
 									loading={loading}
 									sortHandler24h={() => sortHandler24h()}
 									sortHandlerToken={() => sortHandlerToken()}
+									sortHandlerRank={() => sortHandlerRank()}
 								/>
 							}
 						/>
@@ -109,6 +125,7 @@ function App() {
 									loading={loading}
 									sortHandler24h={() => sortHandler24h()}
 									sortHandlerToken={() => sortHandlerToken()}
+									sortHandlerRank={() => sortHandlerRank()}
 								/>
 							}
 						/>
