@@ -1,6 +1,5 @@
-import React, { useContext, useState } from 'react'
-import styles from './Favorites.module.css'
 
+import styles from './Favorites.module.css'
 import Coin from '../Coin/Coin'
 import FavCoins from '../../components/FavCoins/FavCoins'
 import { Link } from 'react-router-dom'

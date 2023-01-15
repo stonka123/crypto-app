@@ -1,4 +1,3 @@
-import React, { useContext } from 'react'
 import styles from './CoinItem.module.css'
 import ArrowDropUpIcon from '@mui/icons-material/ArrowDropUp'
 import ArrowDropDownIcon from '@mui/icons-material/ArrowDropDown'
@@ -12,7 +11,7 @@ const CoinItem = props => {
 				key={props.coin?.market_cap_rank}>
 				<p className={styles.rank}>{props.coin?.market_cap_rank}</p>
 				<div className={styles.name}>
-					<img src={props.coin?.image} alt='' />
+					<img src={props.coin?.image} alt={props.coin.symbol} />
 					<p className={styles['coin-name']}>{props.coin.symbol}</p>
 				</div>
 				{props.coin?.price_change_percentage_24h.toFixed(1) == 0 && (
@@ -28,8 +27,7 @@ const CoinItem = props => {
 
 				{props.coin?.price_change_percentage_24h.toFixed(1) < -0.01 && (
 					<p className={`${styles.red} box`}>
-						<ArrowDropDownIcon className={styles['arrow-down']} /> {props.coin?.price_change_percentage_24h.toFixed(1)}
-						%
+						<ArrowDropDownIcon className={styles['arrow-down']} /> {props.coin?.price_change_percentage_24h.toFixed(1)}%
 					</p>
 				)}
 				<p className={styles['box-price']}>{props.coin?.current_price.toFixed(2)} USD</p>

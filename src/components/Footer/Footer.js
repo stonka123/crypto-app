@@ -45,9 +45,6 @@ const Footer = () => {
 						setValue(newValue)
 					}}>
 					<IconBarBottom component={Link} to={'/'} label='Market' icon={<SsidChartIcon />} />
-
-					{/* <IconBarBottom component={Link} to={'/search'} label='Search' icon={<SearchIcon />} /> */}
-
 					<IconBarBottom component={Link} to={'/favorites'} label='Favorites' icon={<FavoriteIcon />} />
 				</BottomBar>
 			</Box>

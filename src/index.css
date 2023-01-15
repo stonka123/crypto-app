@@ -16,7 +16,6 @@ html {
 .dashboard {
 	position: relative;
 	background-color: #141316;
-	/* margin: 0 auto; */
 	max-width: 900px;
 	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 }

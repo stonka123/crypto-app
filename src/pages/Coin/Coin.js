@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react'
 import axios from 'axios'
 import { useParams } from 'react-router-dom'
 import styles from './Coin.module.css'
-
 import FavoriteIcon from '@mui/icons-material/Favorite'
 
 import moment from 'moment'
@@ -136,7 +135,7 @@ const Coin = (props, konFav) => {
 												}>
 												{coin.market_data.price_change_percentage_1y_in_currency.usd
 													? coin.market_data.price_change_percentage_1y_in_currency.usd.toFixed(1)
-													: 0 }
+													: 0}
 												%
 											</p>
 										) : null}

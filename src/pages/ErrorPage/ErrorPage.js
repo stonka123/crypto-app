@@ -4,7 +4,7 @@ const ErrorPage = () => {
 	return (
 		<div className={styles.container}>
 			<p>Error 404</p>
-			<img src={LogoImg} alt='' />
+			<img src={LogoImg} alt='logo' />
 			<p>Cryptocurrency does not exist!</p>
 		</div>
 	)

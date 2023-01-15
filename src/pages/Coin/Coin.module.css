@@ -38,7 +38,7 @@
 .contentBody {
 	max-width: 740px;
 	margin: 1em auto;
-	padding: 0.5rem;
+	padding: 1em;
 	display: flex;
 	flex-direction: column;
 	background-color: #26272b;

@@ -1,4 +1,4 @@
-import React from 'react'
+
 import Coin from '../../pages/Coin/Coin'
 import styles from './Coins.module.css'
 import { Link } from 'react-router-dom'
@@ -16,6 +16,9 @@ const Coins = props => {
 	const sortRank = () => {
 		props.sortHandlerRank()
 	}
+	const sortPrice = () => {
+		props.sortHandlerPrice()
+	}
 
 	return (
 		<div className={styles.container}>
@@ -29,7 +32,9 @@ const Coins = props => {
 				<p className={styles.box} onClick={sort24h}>
 					24h
 				</p>
-				<p className={styles['box-price']}>Price</p>
+				<p className={styles['box-price']} onClick={sortPrice}>
+					Price
+				</p>
 				<p className={styles.mobileHide}>Volume</p>
 				<p className={styles.mobileHide}>Market Cap</p>
 			</div>

@@ -5,8 +5,6 @@ import Navbar from './components/Navbar/Navbar'
 import Coin from './pages/Coin/Coin'
 import axios from 'axios'
 import Footer from './components/Footer/Footer'
-import './mui.css'
-import Search from './pages/Search/Search'
 import Favorites from './pages/Favorites/Favorites'
 import ErrorPage from './pages/ErrorPage/ErrorPage'
 
@@ -16,7 +14,7 @@ function App() {
 	const [searchTerm, setSearchTerm] = useState('')
 	const [fav, setFav] = useState([])
 	const [order, setOrder] = useState('ASC')
-	
+
 	const url =
 		'https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=100&page=1&sparkline=false'
 
@@ -43,7 +41,6 @@ function App() {
 		}
 	}
 	const removeFavCoin = value => {
-		console.log('klik', fav)
 		setFav(oldValues => {
 			return oldValues.filter(fav => fav.id !== value)
 		})
@@ -59,8 +56,17 @@ function App() {
 			setCoins(sorted.reverse())
 			setOrder('ASC')
 		}
+	}
 
-		// return setCoins(sorted)
+	const sortHandlerPrice = () => {
+		const sorted = [...coins].sort((a, b) => (b['current_price'] > a['current_price'] ? 1 : -1))
+		if (order === 'ASC') {
+			setCoins(sorted)
+			setOrder('DSC')
+		} else if (order === 'DSC') {
+			setCoins(sorted.reverse())
+			setOrder('ASC')
+		}
 	}
 
 	const sortHandlerToken = () => {
@@ -72,9 +78,6 @@ function App() {
 			setCoins(sorted.reverse())
 			setOrder('ASC')
 		}
-
-		// const sorted = [...coins].sort((a, b) => (b.symbol < a.symbol ? 1 : -1))
-		// return setCoins(sorted)
 	}
 	const sortHandlerRank = () => {
 		const sorted = [...coins].sort((a, b) => (b.market_cap_rank < a.market_cap_rank ? 1 : -1))
@@ -85,9 +88,6 @@ function App() {
 			setCoins(sorted.reverse())
 			setOrder('ASC')
 		}
-
-		// const sorted = [...coins].sort((a, b) => (b.symbol < a.symbol ? 1 : -1))
-		// return setCoins(sorted)
 	}
 
 	return (
@@ -113,6 +113,7 @@ function App() {
 									sortHandler24h={() => sortHandler24h()}
 									sortHandlerToken={() => sortHandlerToken()}
 									sortHandlerRank={() => sortHandlerRank()}
+									sortHandlerPrice={() => sortHandlerPrice()}
 								/>
 							}
 						/>
@@ -126,13 +127,11 @@ function App() {
 									sortHandler24h={() => sortHandler24h()}
 									sortHandlerToken={() => sortHandlerToken()}
 									sortHandlerRank={() => sortHandlerRank()}
+									sortHandlerPrice={() => sortHandlerPrice()}
 								/>
 							}
 						/>
-						<Route
-							path='/search'
-							element={<Search coins={coins} loading={loading} onSearch={term => searchHandler(term)} />}
-						/>
+
 						<Route
 							path='/favorites'
 							element={<Favorites coins={coins} loading={loading} favC={fav} onDelete={removeFavCoin} />}

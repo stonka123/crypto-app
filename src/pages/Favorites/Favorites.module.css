@@ -19,9 +19,15 @@
 
 	padding: 0.5em 0.5em;
 }
+.heading p {
+	color: #9cb957;
+	padding: 0.3em 0.2em;
+	
+}
 .link {
 	text-decoration: none;
 }
+
 .test {
 	position: absolute;
 	top: 0;

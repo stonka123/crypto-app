@@ -19,7 +19,15 @@
 	padding: 0.5em 0.5em;
 }
 .heading p {
+	color: #9cb957;
+	padding: 0.3em 0.2em;
+
 	cursor: pointer;
+	transition: all 0.3s;
+}
+
+.heading p:hover {
+	color: #bbfc30;
 }
 .link {
 	text-decoration: none;
